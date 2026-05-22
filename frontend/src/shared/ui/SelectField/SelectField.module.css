@@ -1,0 +1,33 @@
+.field {
+  width: 100%;
+}
+
+.select {
+  width: 100%;
+}
+
+.select {
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-text) !important;
+  transition: all 0.2s ease;
+  background: var(--color-bg-container) !important;
+}
+
+.select:hover {
+  border-color: var(--color-primary) !important;
+}
+
+.select:global(.ant-select-focused) {
+  border-color: var(--color-primary) !important;
+}
+
+.selectError {
+  border-color: var(--color-error) !important;
+  background: var(--color-error-bg) !important;
+}
+
+.selectSuccess {
+  border-color: var(--color-success) !important;
+  background: var(--color-success-bg) !important;
+}

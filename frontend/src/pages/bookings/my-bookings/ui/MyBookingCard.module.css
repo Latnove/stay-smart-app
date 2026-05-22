@@ -1,0 +1,237 @@
+.card {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 20px;
+
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-bg-container);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    border-color var(--transition-default),
+    box-shadow var(--transition-default),
+    transform var(--transition-default);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.inactiveCard {
+  opacity: 0.78;
+}
+
+.image {
+  overflow: hidden;
+  min-height: 230px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-page);
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  min-height: 230px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+
+  font-weight: 600;
+  color: var(--color-text-half-shade);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.cardHeader {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.titleBlock {
+  min-width: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.statusActive {
+  color: var(--color-success);
+  background-color: var(--color-success-bg);
+}
+
+.statusCancelled {
+  color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.statusProvided {
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+}
+
+.category {
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+}
+
+.cardTitle {
+  margin: 0 0 8px !important;
+
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: var(--color-text);
+}
+
+.address {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  line-height: 1.45;
+  color: var(--color-text-half-shade);
+}
+
+.priceBox {
+  flex: 0 0 auto;
+
+  min-width: 150px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  text-align: right;
+
+  background: var(--color-bg-page);
+}
+
+.priceLabel {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: var(--color-text-half-shade);
+}
+
+.price {
+  display: block;
+
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-success);
+  white-space: nowrap;
+}
+
+.cancelledPrice {
+  color: var(--color-text-half-shade);
+}
+
+.listingMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.listingMeta > span {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-half-shade);
+
+  background: var(--color-bg-page);
+}
+
+.listingMeta svg {
+  color: var(--color-primary);
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+
+  margin-top: auto;
+}
+
+.actionButton {
+  width: fit-content;
+}
+
+@media (width <= 1040px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .image {
+    aspect-ratio: 2 / 1;
+    min-height: auto;
+  }
+}
+
+@media (width <= 820px) {
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .priceBox {
+    width: 100%;
+    text-align: left;
+  }
+
+  .metaGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width <= 620px) {
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions > span,
+  .actionButton {
+    width: 100%;
+  }
+}

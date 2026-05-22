@@ -1,0 +1,64 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_TURNSTILE_SITE_KEY: ${VITE_TURNSTILE_SITE_KEY}
+    container_name: stay-smart-frontend
+    environment:
+      VITE_API_PROXY_TARGET: http://app:8080
+      VITE_ALLOWED_HOSTS: ${VITE_ALLOWED_HOSTS}
+    ports:
+      - '127.0.0.1:${FRONTEND_PORT}:4173'
+    depends_on:
+      app:
+        condition: service_started
+
+  app:
+    build:
+      context: ./server
+    container_name: stay-smart-app
+    env_file:
+      - .env
+    environment:
+      SERVER_PORT: 8080
+      DB_URL: jdbc:postgresql://db:5432/staysmartdb
+      DB_USERNAME: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      REDIS_HOST: redis
+      FRONTEND_URL: ${FRONTEND_URL}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS}
+    ports:
+      - '127.0.0.1:${SERVER_PORT}:8080'
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    container_name: stay-smart-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d staysmartdb']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: stay-smart-redis
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres-data:

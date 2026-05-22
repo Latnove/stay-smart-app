@@ -1,0 +1,126 @@
+.card {
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-page);
+}
+
+.cancelledCard {
+  opacity: 0.76;
+}
+
+.cardTop {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.statusActive {
+  border: 1px solid var(--color-success) !important;
+  color: var(--color-success) !important;
+  background-color: var(--color-success-bg) !important;
+}
+
+.statusProvided {
+  border: 1px solid var(--color-warning) !important;
+  color: var(--color-warning) !important;
+  background-color: var(--color-warning-bg) !important;
+}
+
+.statusCancelled {
+  border: 1px solid var(--color-error) !important;
+  color: var(--color-error) !important;
+  background-color: var(--color-error-bg) !important;
+}
+
+.period {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.period svg {
+  color: var(--color-primary);
+}
+
+.right {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-success);
+  white-space: nowrap;
+}
+
+.bottom {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 12px;
+  justify-content: space-between;
+}
+
+.cancelButton {
+  width: fit-content;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meta > span {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-half-shade);
+
+  background-color: var(--color-bg-container);
+}
+
+.meta svg {
+  color: var(--color-primary);
+}
+
+@media (width <= 720px) {
+  .cardTop,
+  .right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price {
+    white-space: normal;
+  }
+
+  .cancelButton,
+  .right,
+  .right > span {
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+.filters {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) 210px 190px;
+  gap: 12px;
+}
+
+.search,
+.filterSelect {
+  height: 42px;
+}
+
+@media (width <= 920px) {
+  .filters {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,237 @@
+openapi: 3.0.3
+info:
+  title: StaySmart Booking API
+  version: "1.0"
+paths:
+  /api/listings/{listingId}/bookings:
+    get:
+      tags:
+        - bookings
+      operationId: getListingBookings
+      parameters:
+        - name: listingId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Bookings for listing
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/BookingDto"
+    post:
+      tags:
+        - bookings
+      operationId: createBooking
+      parameters:
+        - name: listingId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookingRequest"
+      responses:
+        "201":
+          description: Booking created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BookingDto"
+  /api/bookings/my:
+    get:
+      tags:
+        - bookings
+      operationId: getMyBookings
+      responses:
+        "200":
+          description: Current user bookings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/BookingDto"
+  /api/bookings/{id}/period:
+    patch:
+      tags:
+        - bookings
+      operationId: changeBookingPeriod
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookingRequest"
+      responses:
+        "200":
+          description: Booking period changed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BookingDto"
+  /api/bookings/{id}/cancel:
+    patch:
+      tags:
+        - bookings
+      operationId: cancelBooking
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Booking cancelled
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BookingDto"
+components:
+  schemas:
+    BookingRequest:
+      type: object
+      required:
+        - startDate
+        - endDate
+      properties:
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+    BookingDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        listingId:
+          type: string
+          format: uuid
+        listing:
+          $ref: "#/components/schemas/ListingDto"
+        userId:
+          type: string
+          format: uuid
+        user:
+          $ref: "#/components/schemas/UserDto"
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+        pricePerDay:
+          type: integer
+          format: int32
+        totalPrice:
+          type: integer
+          format: int32
+        status:
+          type: string
+          enum:
+            - active
+            - cancelled
+            - provided
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    ListingDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        description:
+          type: string
+        city:
+          type: string
+        address:
+          type: string
+        price:
+          type: integer
+          format: int32
+        maxGuests:
+          type: integer
+          format: int32
+        images:
+          type: array
+          items:
+            type: string
+        rating:
+          type: number
+          format: double
+        type:
+          type: string
+          enum:
+            - apartment
+            - house
+            - room
+        isOwner:
+          type: boolean
+        ownerUsername:
+          type: string
+        status:
+          type: string
+          enum:
+            - review
+            - active
+            - blocked
+    UserDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        role:
+          type: string
+          enum:
+            - admin
+            - user
+        verified:
+          type: string
+          enum:
+            - none
+            - pending
+            - verified
+            - rejected
+        createdAt:
+          type: string
+          format: date-time
+        blocked:
+          type: boolean
+        verificationReason:
+          type: string
+        blockReason:
+          type: string

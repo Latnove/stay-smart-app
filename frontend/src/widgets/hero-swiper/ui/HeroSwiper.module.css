@@ -1,0 +1,30 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.swiper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.swiperSlide {
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  object-position: bottom;
+  width: 100%;
+  height: 100%;
+}

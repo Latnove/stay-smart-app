@@ -1,0 +1,68 @@
+.section {
+  background-color: var(--color-white);
+}
+
+.text {
+  margin-bottom: 32px;
+}
+
+.faqCollapse {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+:global(.ant-collapse) {
+  background-color: transparent;
+  border: none;
+}
+
+:global(.ant-collapse-item) {
+  padding: 4px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px !important;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background-color: var(--color-bg-container);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+:global(.ant-collapse-item:hover) {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  color: var(--color-primary-hover);
+}
+
+:global(.ant-collapse-item:hover) .faqHeader {
+  color: var(--color-primary-hover);
+}
+
+:global(.ant-collapse-item-active) {
+  border: 1px solid var(--color-primary) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.faqHeader {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.25s ease;
+}
+
+.faqContent {
+  padding: 0 24px;
+  background-color: var(--color-bg-container);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.faqContent p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-half-shade);
+}

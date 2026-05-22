@@ -1,0 +1,37 @@
+.section {
+  padding: 150px 0 100px;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.content {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px 25px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-container);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 16px !important;
+  color: var(--color-text);
+  font-size: 28px !important;
+}
+
+.text {
+  display: block;
+  margin-bottom: 24px;
+  color: var(--color-text-secondary);
+}
+
+.error {
+  color: var(--color-error) !important;
+}

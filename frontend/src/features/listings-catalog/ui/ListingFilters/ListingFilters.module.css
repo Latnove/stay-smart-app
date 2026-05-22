@@ -1,0 +1,103 @@
+.container {
+  background: var(--color-bg-container);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  margin: 0 0 16px !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--color-text);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldTitle {
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: var(--color-text-half-shade);
+}
+
+.fields {
+  display: flex;
+  gap: 8px;
+}
+
+.fields > * {
+  flex: 1;
+}
+
+:global(.ant-slider) {
+  margin: 8px 4px 16px !important;
+}
+
+:global(.ant-slider-track) {
+  background-color: var(--color-primary) !important;
+}
+
+:global(.ant-slider-handle) {
+  border-color: var(--color-primary) !important;
+}
+
+:global(.ant-slider-handle:hover) {
+  border-color: var(--color-primary-hover) !important;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.primaryButton {
+  flex: 1;
+}
+
+.secondaryButton {
+  flex: 1;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:global(.ant-checkbox-wrapper) {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:global(.ant-checkbox-wrapper:hover) span,
+:global(.ant-checkbox-wrapper:has(.ant-checkbox-checked)) span {
+  color: var(--color-primary) !important;
+}
+
+:global(.ant-checkbox-checked .ant-checkbox-inner) {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+:global(.ant-checkbox-wrapper span:last-child) {
+  font-size: 14px;
+  color: var(--color-text);
+}

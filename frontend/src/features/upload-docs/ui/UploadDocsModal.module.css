@@ -1,0 +1,120 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.isUpload :global(.ant-upload-list) {
+  display: none;
+}
+
+.upload {
+  height: 100%;
+  width: 100%;
+}
+
+.upload :global(.ant-upload) {
+  width: 100%;
+}
+
+.uploadButton {
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+
+  color: var(--color-text-half-shade);
+
+  background: var(--color-bg-container);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+
+  cursor: pointer;
+
+  transition: all var(--transition-default);
+}
+
+.uploadButton:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.uploadButton:active {
+  transform: scale(0.98);
+}
+
+.secondaryButton {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.secondaryButton:hover {
+  border-color: var(--color-error) !important;
+  color: var(--color-error) !important;
+  background-color: var(--color-error-bg) !important;
+}
+
+:global(.ant-modal-header) {
+  padding-bottom: 12px !important;
+}
+
+:global(.ant-modal-footer) {
+  padding-top: 12px !important;
+}
+
+:global(.ant-upload-list) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-top: 0;
+}
+
+:global(.ant-upload-list-item) {
+  padding: 10px 12px !important;
+  gap: 10px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: var(--color-bg-container);
+
+  transition: all var(--transition-fast);
+}
+
+:global(.ant-upload-list-item:hover) {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+:global(.ant-upload-list-item-name) {
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+:global(.ant-upload-list-item-actions button) {
+  color: var(--color-text-light);
+  font-size: 16px;
+}
+
+:global(.ant-upload-list-item-actions .ant-upload-list-item-action:hover) {
+  background: none !important;
+  transform: scale(1.05);
+}
+
+:global(.ant-upload-list-item-actions .ant-upload-list-item-action:hover .anticon) {
+  color: var(--color-error) !important;
+}
+
+:global(.ant-upload-list) {
+  max-height: 330px;
+  overflow-y: auto;
+}

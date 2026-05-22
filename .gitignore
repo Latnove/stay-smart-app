@@ -1,0 +1,9 @@
+node_modules
+build
+.gradle
+.idea
+dist
+.env
+openapi.yml
+.DS_Store
+.git.backup-before-stay-smart-push

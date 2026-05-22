@@ -1,0 +1,7 @@
+.error {
+  display: block;
+  font-size: 12px;
+  color: var(--color-error);
+  line-height: 1.2;
+  margin: 4px 0 4px !important;
+}

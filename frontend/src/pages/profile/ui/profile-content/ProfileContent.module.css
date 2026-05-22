@@ -1,0 +1,63 @@
+.title {
+  font-size: 26px !important;
+  margin: 0 0 15px !important;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.settings {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemText {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.buttons {
+  margin-top: 5px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.resetButton {
+  flex: 2 !important;
+}
+
+.buttons > * {
+  flex: 3;
+}
+
+.uploadButton {
+  margin-top: 15px;
+  display: block;
+}
+
+.sendDocs {
+  flex: 3;
+}
+
+.statusText {
+  margin: 10px 0 0;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: underline;
+}
+
+.uploadPendingText {
+  color: var(--color-warning);
+}
+
+.uploadVerifiedText {
+  color: var(--color-success);
+}

@@ -1,0 +1,9 @@
+.skeleton {
+  width: 100% !important;
+  height: 65px !important;
+  border-radius: var(--radius-sm);
+}
+
+.captcha {
+  width: 100%;
+}

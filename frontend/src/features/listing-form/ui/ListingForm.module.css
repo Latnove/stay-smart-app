@@ -1,0 +1,194 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.title {
+  margin: 0 0 8px !important;
+
+  font-size: 34px !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+
+  color: var(--color-text);
+}
+
+.subtitle {
+  color: var(--color-text-half-shade);
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.card {
+  padding: 24px;
+
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+
+  background: var(--color-bg-container);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.blockTitle {
+  margin: 0 0 20px !important;
+
+  color: var(--color-text);
+
+  font-size: 24px !important;
+  font-weight: 700 !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labelWide {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  grid-column: 1 / -1;
+}
+
+.text {
+  color: var(--color-text);
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.numberInput {
+  width: 100%;
+}
+
+.numberInput :global(.ant-input-number) {
+  width: 100%;
+}
+
+.numberInput :global(.ant-input-number-input-wrap input) {
+  color: var(--color-text);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.secondary {
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.uploadButton {
+  margin-bottom: 10px;
+}
+
+.uploadButton:hover {
+  transform: translateY(-2px);
+}
+
+.upload {
+  width: 100%;
+}
+
+.upload :global(.ant-upload) {
+  width: 100%;
+}
+
+.upload :global(.ant-upload-list) {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upload :global(.ant-upload-list-item-container) {
+  width: 100% !important;
+}
+
+.upload :global(.ant-upload-list-item) {
+  width: 100% !important;
+  height: auto !important;
+  padding: 12px !important;
+
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--color-border) !important;
+
+  background: var(--color-bg-container) !important;
+}
+
+.uploadItem {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.uploadImage {
+  width: 120px;
+  height: 80px;
+
+  object-fit: cover;
+
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.uploadContent {
+  min-width: 0;
+}
+
+.uploadHint {
+  color: var(--color-text-light);
+
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 28px !important;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}

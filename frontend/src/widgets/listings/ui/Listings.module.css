@@ -1,0 +1,36 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.sort {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filters {
+  position: sticky;
+  top: 84px;
+  width: 280px;
+  flex: 0 0 280px;
+  height: fit-content;
+}
+
+.listingList {
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.empty {
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: var(--color-text-half-shade);
+  text-align: center;
+}

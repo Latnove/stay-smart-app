@@ -1,0 +1,11 @@
+.tag {
+  font-size: 12px;
+  padding: 4px 12px;
+
+  border-radius: 8px;
+
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+
+  white-space: nowrap;
+}

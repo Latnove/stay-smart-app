@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+
+.backFilled {
+  color: var(--color-warning-bg);
+}
+
+.backFilled svg,
+.filled svg {
+  stroke: var(--color-warning);
+  stroke-linejoin: round;
+  stroke-width: 36px;
+}
+
+.filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-warning);
+}

@@ -1,0 +1,134 @@
+.card {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  gap: 28px;
+  background-color: var(--color-bg-container);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  cursor: pointer;
+}
+
+.card:hover .image {
+  transform: scale(1.02);
+}
+
+.card:hover .title {
+  color: var(--color-primary);
+}
+
+.card .tags > *,
+.card:hover .price {
+  transition: all var(--transition-default);
+}
+
+.card:hover .tags > *,
+.card:hover .price {
+  transform: scale(1.03);
+}
+
+.image {
+  width: 30%;
+  aspect-ratio: 1.75 / 1;
+  min-height: 100%;
+  transition: all var(--transition-default);
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.featuresList {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  transition: all var(--transition-default);
+}
+
+.svg {
+  width: 18px;
+  height: 18px;
+}
+
+.type {
+  width: fit-content !important;
+}
+
+.title {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 !important;
+  font-size: 20px !important;
+  transition: all var(--transition-default);
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+}
+
+.city {
+  color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.description {
+  margin: 0 !important;
+}
+
+.guestsWrapper {
+  margin: 0 !important;
+}
+
+.guestsWrapper,
+.address {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--color-text-half-shade);
+
+  gap: 6px;
+}
+
+.svg {
+  font-size: 14px;
+  line-height: 1;
+  width: 14px;
+  height: 14px;
+  fill: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.rating {
+  color: var(--color-warning);
+  background-color: var(--color-warning-bg);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}

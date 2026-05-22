@@ -1,0 +1,229 @@
+.legend {
+  font-size: 15px;
+  color: var(--color-text);
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendarWrapper {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  background: var(--color-bg-container);
+  box-shadow: var(--shadow-sm);
+}
+
+.calendarHeader {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.navigationButton {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-half-shade);
+}
+
+.navigationButton:hover {
+  color: var(--color-primary) !important;
+  background: var(--color-primary-light) !important;
+}
+
+.calendarSelects {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 10px;
+}
+
+.calendarSelects :global(.ant-select-selector) {
+  height: 40px !important;
+  border-color: var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.calendarSelects :global(.ant-select-selection-item) {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.dayPicker {
+  --rdp-accent-color: var(--color-primary);
+  --rdp-background-color: var(--color-primary-light);
+  --rdp-day-width: 44px;
+  --rdp-day-height: 44px;
+
+  width: 100%;
+  color: var(--color-text);
+  display: flex;
+}
+
+.dayPicker :global(.rdp-months),
+.dayPicker :global(.rdp-month),
+.dayPicker :global(.rdp-month_grid) {
+  max-width: 100%;
+  width: 100%;
+}
+
+.dayPicker :global(.rdp-month_caption),
+.dayPicker :global(.rdp-nav) {
+  display: none;
+}
+
+.dayPicker :global(.rdp-weekdays) {
+  margin-bottom: 8px;
+}
+
+.dayPicker :global(.rdp-weekday) {
+  color: var(--color-text-half-shade);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.dayPicker :global(.rdp-week) {
+  margin-top: 4px;
+}
+
+.dayPicker :global(.rdp-day) {
+  text-align: center;
+}
+
+.dayPicker :global(.rdp-day_button) {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.dayPicker :global(.rdp-day_button:hover:not([disabled])) {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.today :global(.rdp-day_button) {
+  border: 1px solid var(--color-primary) !important;
+}
+
+.outsideDay {
+  opacity: 0.32;
+  color: var(--color-text-light) !important;
+}
+
+.disabledDay {
+  opacity: 0.45;
+  cursor: not-allowed !important;
+  color: var(--color-text-light) !important;
+}
+
+.bookedDay :global(.rdp-day_button) {
+  background: var(--color-border) !important;
+  color: var(--color-text-half-shade) !important;
+  cursor: not-allowed !important;
+}
+
+.myBookingDay :global(.rdp-day_button) {
+  background: var(--color-success) !important;
+  color: var(--color-white) !important;
+  font-weight: 700 !important;
+}
+
+.selectedDay :global(.rdp-day_button),
+.rangeStart :global(.rdp-day_button),
+.rangeEnd :global(.rdp-day_button) {
+  background: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  font-weight: 700 !important;
+}
+
+.rangeMiddle {
+  color: var(--color-white);
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 14px 16px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-page);
+}
+
+.summaryLabel {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-text-half-shade);
+  font-size: 13px;
+}
+
+.summaryValue {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.summaryPrice {
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hint {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-half-shade);
+}
+
+.dayPicker :global(.rdp-month_grid) {
+  border-collapse: separate;
+  border-spacing: 12px;
+}
+
+@media (max-width: 640px) {
+  .calendarWrapper {
+    padding: 12px;
+  }
+
+  .calendarHeader {
+    grid-template-columns: 36px 1fr 36px;
+  }
+
+  .calendarSelects {
+    grid-template-columns: 1fr;
+  }
+
+  .navigationButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .dayPicker {
+    --rdp-day-width: 36px;
+    --rdp-day-height: 36px;
+  }
+
+  .dayPicker :global(.rdp-day_button) {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .hint {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,15 @@
+.button {
+  padding: 6px 18px !important;
+}
+
+.isPrimary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.isSecondary {
+  background: none;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}

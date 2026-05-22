@@ -1,0 +1,53 @@
+:root {
+  /* TEXT */
+  --color-text: #1e293b; /* Основной текст */
+  --color-text-half-shade: #64748b; /* Второстепенный */
+  --color-text-light: #94a3b8; /* Плейсхолдеры */
+  --color-white: #ffffff;
+  --color-black: #000;
+
+  /* BACKGROUND */
+  --color-bg-page: #f8fafc; /* Фон страницы */
+  --color-bg-container: #ffffff; /* Карточки */
+
+  /* PRIMARY (основной цвет продукта) */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-active: #1e40af;
+  --color-primary-light: #dbeafe;
+
+  /* ACCENT (можно использовать для выделения цены, кнопок) */
+  --color-accent: #f59e0b;
+  --color-accent-hover: #d97706;
+  --color-accent-light: #fef3c7;
+
+  /* SUCCESS */
+  --color-success: #22c55e;
+  --color-success-bg: #f0fdf4;
+
+  /* ERROR */
+  --color-error: #ef4444;
+  --color-error-bg: #fef2f2;
+
+  /* WARNING */
+  --color-warning: #facc15;
+  --color-warning-bg: #fefad1;
+
+  /* BORDER */
+  --color-border: #e2e8f0;
+  --color-border-dark: #cbd5f5;
+
+  /* SHADOW */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+  /* RADIUS */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* TRANSITIONS */
+  --transition-fast: 0.15s ease;
+  --transition-default: 0.25s ease;
+}

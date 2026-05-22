@@ -1,0 +1,121 @@
+@baseUrl = http://localhost:8080/api
+@accessToken =
+@refreshToken =
+@listingId =
+@bookingId =
+@reviewId =
+@captchaToken =
+
+### Register
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "Password1!",
+  "repeatPassword": "Password1!",
+  "captcha": "{{captchaToken}}"
+}
+
+### Login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@staysmart.local",
+  "password": "Admin12345!",
+  "captcha": "{{captchaToken}}"
+}
+
+### Me
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{accessToken}}
+
+### Listings
+GET {{baseUrl}}/listings?page=1&limit=9&sortBy=name&order=asc
+
+### Create listing
+POST {{baseUrl}}/listings
+Authorization: Bearer {{accessToken}}
+Content-Type: multipart/form-data; boundary=StaySmartBoundary
+
+--StaySmartBoundary
+Content-Disposition: form-data; name="title"
+
+Современная квартира в центре
+--StaySmartBoundary
+Content-Disposition: form-data; name="description"
+
+Светлая квартира с панорамными окнами, кухней и быстрым интернетом.
+--StaySmartBoundary
+Content-Disposition: form-data; name="city"
+
+Рига
+--StaySmartBoundary
+Content-Disposition: form-data; name="address"
+
+ул. Бривибас 12
+--StaySmartBoundary
+Content-Disposition: form-data; name="price"
+
+520
+--StaySmartBoundary
+Content-Disposition: form-data; name="maxGuests"
+
+2
+--StaySmartBoundary
+Content-Disposition: form-data; name="type"
+
+apartment
+--StaySmartBoundary
+Content-Disposition: form-data; name="files"; filename="apartment.jpeg"
+Content-Type: image/jpeg
+
+< ../../frontend/src/shared/assets/photo-1502672260266-1c1ef2d93688.jpeg
+--StaySmartBoundary--
+
+### Book listing
+POST {{baseUrl}}/listings/{{listingId}}/bookings
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "startDate": "2026-09-18",
+  "endDate": "2026-09-22"
+}
+
+### My bookings
+GET {{baseUrl}}/bookings/my
+Authorization: Bearer {{accessToken}}
+
+### Create review
+POST {{baseUrl}}/listings/{{listingId}}/reviews
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "rating": 5,
+  "text": "Отличное жилье, все понравилось. Удобное расположение и чистая квартира."
+}
+
+### Favorites
+GET {{baseUrl}}/favorites
+Authorization: Bearer {{accessToken}}
+
+### Merge local favorites after login
+POST {{baseUrl}}/favorites/merge
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "listingIds": ["{{listingId}}"]
+}
+
+### Notifications
+GET {{baseUrl}}/notifications
+Authorization: Bearer {{accessToken}}
+
+### Admin users
+GET {{baseUrl}}/admin/users?verificationFilter=all&sortOrder=newest
+Authorization: Bearer {{accessToken}}
