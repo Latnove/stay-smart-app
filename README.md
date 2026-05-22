@@ -156,3 +156,5 @@ HTTP-файлы можно запускать из IntelliJ IDEA через кн
 ## Автор
 
 Проект выполнен как семестровая работа.
+
+https://github.com/user-attachments/assets/f523a610-e412-4349-a292-ad2087414a5b
