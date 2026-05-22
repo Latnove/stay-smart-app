@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/a45c8295-386f-4527-9f08-cb8bd3486640
 # Stay Smart App (задеплоин: staysmart.kemalthes.ru)
 
 Stay Smart App - учебный сервис для поиска, публикации и бронирования жилья. Проект состоит из React-фронтенда и Spring Boot-бэкенда, работает с PostgreSQL, Redis, Cloudinary, Cloudflare Turnstile, email-подтверждением и WebSocket-уведомлениями.
@@ -157,4 +159,4 @@ HTTP-файлы можно запускать из IntelliJ IDEA через кн
 
 Проект выполнен как семестровая работа.
 
-https://github.com/user-attachments/assets/f523a610-e412-4349-a292-ad2087414a5b
+Uploading staysmart_max10mb_fixed.mp4…
