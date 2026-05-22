@@ -1,4 +1,4 @@
-# Stay Smart App
+# Stay Smart App (задеплоин: staysmart.kemalthes.ru)
 
 Stay Smart App - учебный сервис для поиска, публикации и бронирования жилья. Проект состоит из React-фронтенда и Spring Boot-бэкенда, работает с PostgreSQL, Redis, Cloudinary, Cloudflare Turnstile, email-подтверждением и WebSocket-уведомлениями.
 
